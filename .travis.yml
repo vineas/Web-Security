@@ -23,6 +23,6 @@ branches:
       - php artisan key:generate
 #script -> main execution
   script:
-    -./vendor/bin/phpunit
+    - ./vendor/bin/phpunit
 #ketika kondisi main execution finish
   after_success:
