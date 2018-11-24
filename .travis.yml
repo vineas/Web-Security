@@ -9,7 +9,7 @@ language: php
 
 #versi bahasa yang digunakan
 php:
-  -7.1
+  - 7.1
 
 #tentukan branch
 branches:
@@ -17,12 +17,12 @@ branches:
     - master #-> QA/Staging
     - develop #-> DevServer
 
-    before_script:
-      - cp .env.travis .env
-      - composer install --no-interaction
-      - php artisan key:generate
+  before_script:
+    - cp .env.travis .env
+    - composer install --no-interaction
+    - php artisan key:generate
 #script -> main execution
-  script:
+script:
     - ./vendor/bin/phpunit
 #ketika kondisi main execution finish
-  after_success:
+after_success:
